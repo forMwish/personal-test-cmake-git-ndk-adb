@@ -14,7 +14,8 @@ set(SOURCE_CODE_DIR "${PROJECT_SOURCE_DIR}/source")
 configure_file(CmakeConfig.h.in CmakeConfig.h)
 
 # add the executable
-add_executable(Test ${SOURCE_CODE_DIR}/test.cpp)
+add_executable(Test ${SOURCE_CODE_DIR}/test.cpp 
+                    ${SOURCE_CODE_DIR}/MyMath.cpp)
 
 # 将生成的配置头文件加入目标的头文件依赖目录
 target_include_directories(Test PUBLIC "${PROJECT_BINARY_DIR}")
