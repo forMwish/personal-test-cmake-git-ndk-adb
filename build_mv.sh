@@ -9,11 +9,13 @@ ANDROID_STL="c++_static"
 # echo $ANDROID_ABI
 rm -r ./build/*
 cd ./build  &&
-# cmake ..    &&
 cmake .. \
         -DCMAKE_TOOLCHAIN_FILE=$NDK/build/cmake/android.toolchain.cmake \
         -DANDROID_ABI=$ANDROID_ABI \
         -DANDROID_ARM_MODE=$ANDROID_ARM_MODE \
         -DANDROID_ARM_NEON=$ANDROID_ARM_NEON \
             &&
-cmake --build .
+cmake --build . &&
+
+cp ./MathFunctions/libMathFunctions.a /mnt/d/work/myProject/AndroidProject/ &&
+cp ../MathFunctions/MyMath.h /mnt/d/work/myProject/AndroidProject/
